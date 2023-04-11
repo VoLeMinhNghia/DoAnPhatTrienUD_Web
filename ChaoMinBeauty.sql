@@ -1,4 +1,4 @@
-CREATE DATABASE ChaoMinBeauty
+﻿CREATE DATABASE ChaoMinBeauty
 GO
 USE ChaoMinBeauty
 GO
@@ -36,13 +36,11 @@ CREATE TABLE ThuongHieus
 	TenThuongHieu nvarchar(50) NOT NULL,
 	MoTa nvarchar (100)NOT NULL,
 	AnhThuongHieu nvarchar(50) NOT NULL
-
 )
 CREATE TABLE DanhMucSanPhams
 (
 	MaDanhMucSanPham nvarchar(10) PRIMARY KEY,
 	TenDanhMucSanPham nvarchar(20) NOT NULL
-
 )
 GO
 CREATE TABLE SanPhams
@@ -80,7 +78,7 @@ CREATE TABLE ChiTietDonHang
 	MaChiTietDonHang nvarchar(10) PRIMARY KEY,
 	MaDonHang nvarchar(10) NOT NULL FOREIGN KEY REFERENCES DonHangs(MaDonHang),
 	MaSanPham nvarchar(10) NOT NULL FOREIGN KEY REFERENCES SanPhams(MaSanPham),
-	Hotline nvarchar(10) NOT NULL FOREIGN KEY REFERENCES ChuShops(SDT),
+	Hotline nvarchar(10) NOT NULL FOREIGN KEY REFERENCES ChuShops(Hotline),
 	TenSanPham nvarchar(50) NOT NULL,
 	Gia float NOT NULL,
 	SoLuong int NOT NULL
@@ -105,3 +103,16 @@ CREATE TABLE ChiTietPhieuNhaps
 	SoLuongNhap int NOT NULL
 
 )
+INSERT INTO ChuShops VALUES
+	( N'Võ Lê Minh', N'Nghĩa', 'admin.png', '0523053534', 'nghia.vlm.62cntt@ntu.edu.vn', CAST(N'2002-06-17' AS date), 0,'17062002'),
+	( N'Nguyễn Ngọc Hoài', N'Sang', 'admin.png', '0376354610', 'sang.nnh.62cntt@ntu.edu.vn', CAST(N'2002-10-13' AS date), 1,'13102002')
+INSERT INTO ThuongHieus VALUES
+	('TH01','Bioderma', N'Chăm Sóc Da', 'thuonghieu.png'),
+	('TH02','Bioré', N'Chăm Sóc Da', 'thuonghieu.png'),
+	('TH03', 'Lilybyred', N'Mỹ Phẩm', 'thuonghieu.png')
+INSERT INTO DanhMucSanPhams VALUES 
+	('MP', N'Mỹ Phẩm'),
+	('CSD', N'Chăm Sóc Da')
+INSERT INTO SanPhams VALUES
+	('SP01', N'Lilybyred 08', N'Son tint bóng', 135000, N'Màu son thời thượng và không kén da, Độ bền màu tốt, có thể giữu được từ 6 đến 8 tiếng', 
+	CAST(N'2023-06-15' AS date), 'sanpham.png', 133, 'TH03', 'MP', 0)

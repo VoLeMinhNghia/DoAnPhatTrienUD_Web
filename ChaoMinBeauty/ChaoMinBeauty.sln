@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChaoMinBeauty", "ChaoMinBeauty\ChaoMinBeauty.csproj", "{4C8D5CA8-E723-4683-BE7C-B20A8AD8FBEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C8D5CA8-E723-4683-BE7C-B20A8AD8FBEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C8D5CA8-E723-4683-BE7C-B20A8AD8FBEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C8D5CA8-E723-4683-BE7C-B20A8AD8FBEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C8D5CA8-E723-4683-BE7C-B20A8AD8FBEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D5F813C-C7DE-48FB-B6B8-1681E4917F90}
+	EndGlobalSection
+EndGlobal
