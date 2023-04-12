@@ -1,36 +1,22 @@
-﻿using ChaoMinBeauty.Models;
-using ChaoMinBeauty.Models.EntitiesFrame;
-using PagedList;
+﻿using ChaoMinBeauty.Models.EntitiesFrame;
+using ChaoMinBeauty.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.UI;
+using System.Web.Security;
 
 namespace ChaoMinBeauty.Areas.Admin.Controllers
 {
-    public class NewsController : Controller
+    //Authorize(Roles = "Admin,Employee")]
+    public class PostsController : Controller
     {
-        //[Authorize(Roles = "Admin,Employee")]
         private ApplicationDbContext db = new ApplicationDbContext();
-        // GET: Admin/News
-        public ActionResult Index(string Searchtext, int? page)
+        // GET: Admin/Posts
+        public ActionResult Index()
         {
-            var pageSize = 10;
-            if (page == null)
-            {
-                page = 1;
-            }
-            IEnumerable<News> items = db.News.OrderByDescending(x => x.Id);
-            if (!string.IsNullOrEmpty(Searchtext))
-            {
-                items = items.Where(x => x.Alias.Contains(Searchtext) || x.Title.Contains(Searchtext));
-            }
-            var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
-            items = items.ToPagedList(pageIndex, pageSize);
-            ViewBag.PageSize = pageSize;
-            ViewBag.Page = page;
+            var items = db.Posts.ToList();
             return View(items);
         }
         public ActionResult Add()
@@ -40,7 +26,7 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add(News model)
+        public ActionResult Add(Posts model)
         {
             if (ModelState.IsValid)
             {
@@ -48,9 +34,7 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
                 model.CategoryId = 3;
                 model.ModifiedDate = DateTime.Now;
                 model.Alias = ChaoMinBeauty.Models.Common.Filter.FilterChar(model.Title);
-                //db.News.Attach(model);
-                //db.Entry(model).State = System.Data.Entity.EntityState.Modified;
-                db.News.Add(model);
+                db.Posts.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -59,19 +43,19 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            var item = db.News.Find(id);
+            var item = db.Posts.Find(id);
             return View(item);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(News model)
+        public ActionResult Edit(Posts model)
         {
             if (ModelState.IsValid)
             {
                 model.ModifiedDate = DateTime.Now;
                 model.Alias = ChaoMinBeauty.Models.Common.Filter.FilterChar(model.Title);
-                db.News.Attach(model);
+                db.Posts.Attach(model);
                 db.Entry(model).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -82,10 +66,10 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            var item = db.News.Find(id);
+            var item = db.Posts.Find(id);
             if (item != null)
             {
-                db.News.Remove(item);
+                db.Posts.Remove(item);
                 db.SaveChanges();
                 return Json(new { success = true });
             }
@@ -96,7 +80,7 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult IsActive(int id)
         {
-            var item = db.News.Find(id);
+            var item = db.Posts.Find(id);
             if (item != null)
             {
                 item.IsActive = !item.IsActive;
@@ -108,7 +92,6 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
             return Json(new { success = false });
         }
 
-
         [HttpPost]
         public ActionResult DeleteAll(string ids)
         {
@@ -119,8 +102,8 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
                 {
                     foreach (var item in items)
                     {
-                        var obj = db.News.Find(Convert.ToInt32(item));
-                        db.News.Remove(obj);
+                        var obj = db.Posts.Find(Convert.ToInt32(item));
+                        db.Posts.Remove(obj);
                         db.SaveChanges();
                     }
                 }
