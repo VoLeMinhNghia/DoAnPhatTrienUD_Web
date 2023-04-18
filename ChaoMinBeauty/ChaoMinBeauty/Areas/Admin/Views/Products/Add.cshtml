@@ -246,32 +246,15 @@
 @section  scripts{
     <script>
         $(document).ready(function () {
-            $('.auto').autoNumeric('init');
-            $('#demoPrice').bind('blur focusout keypress keyup', function () {
-                var demoGet = $('#demoPrice').autoNumeric('get');
-                $('#Price').val(demoGet);
-                $('#Price').autoNumeric('set', demoGet);
-            });
-            $('#demoPriceSale').bind('blur focusout keypress keyup', function () {
-                var demoGet = $('#demoPriceSale').autoNumeric('get');
-                $('#PriceSale').val(demoGet);
-                $('#PriceSale').autoNumeric('set', demoGet);
-            });
-            $('#demoOriginalPrice').bind('blur focusout keypress keyup', function () {
-                var demoGet = $('#demoOriginalPrice').autoNumeric('get');
-                $('#OriginalPrice').val(demoGet);
-                $('#OriginalPrice').autoNumeric('set', demoGet);
-            });
             CKEDITOR.replace('txtDetail', {
                 customConfig: '/content/ckeditor/config.js',
                 extraAllowedContent: 'span',
             });
-
             $('body').on('click', '.btnXoaAnh', function () {
                 var conf = confirm('Bạn có muốn xóa ảnh này không?');
                 if (conf === true) {
                     var _id = $(this).data('id');
-                    $('#trow_' + _id).fadeTo('fast', 0.5, function () {
+                    $('#trow_' + _id).fadeTo('fast', 1, function () {
                         $(this).slideUp('fast', function () { $(this).remove(); });
                     });
                     var temp = $('#tCurrentId').val();
