@@ -116,3 +116,4 @@ C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\
 C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\bin\PagedList.Mvc.dll
 C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\bin\PagedList.xml
 C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\bin\PagedList.Mvc.xml
+C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\obj\Debug\ChaoMinBeauty.Migrations.Update1904.resources

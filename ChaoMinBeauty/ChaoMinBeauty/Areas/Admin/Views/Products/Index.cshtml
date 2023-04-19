@@ -1,5 +1,5 @@
 ﻿@model PagedList.PagedList<ChaoMinBeauty.Models.EntitiesFrame.Product>
-
+@using PagedList.Mvc
 @{
     ViewBag.Title = "Danh Sách Sản Phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -92,7 +92,7 @@
                             var strCheckHome = item.IsHome ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
                             var strCheckSale = item.IsSale ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
                             var strImg = "";
-                            @*var CheckImage = item.ProductImag.FirstOrDefault(x => x.IsDefault);
+                            var CheckImage = item.ProductImage.FirstOrDefault(x => x.IsDefault);
                             if (CheckImage != null)
                             {
                                 strImg = CheckImage.Image;
@@ -104,7 +104,8 @@
                                 <td>@item.Title</td>
                                 <td>@item.ProductCategory.Title</td>
                                 <td>@item.Quantity</td>
-                                <td>@ChaoMinBeauty.Common.Common.FormatNumber(item.Price, 0)</td>
+                                <td>@item.Price</td>
+                                @*<td>@ChaoMinBeauty.Common.Common.FormatNumber(item.Price, 0)</td>*@
                                 <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                                 <td class="text-center">
                                     <a href='#' data-id="@item.Id" class="btnHome">@Html.Raw(strCheckHome)</a>
@@ -119,7 +120,7 @@
                                     <a href="/admin/Products/edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
                                     <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
                                 </td>
-                            </tr>*@
+                            </tr>
                             i++;
                         }
                     }
@@ -132,12 +133,12 @@
                 </tbody>
             </table>
 
-            @*<div class="row">
+            <div class="row">
                 <div class="col-6"></div>
                 <div class="col-6" style="text-align:right;">
                     @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
                 </div>
-            </div>*@
+            </div>
 
         </div>
         <!-- /.card-body -->

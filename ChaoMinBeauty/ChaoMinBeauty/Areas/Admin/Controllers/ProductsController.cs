@@ -41,31 +41,31 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                //if (Images != null && Images.Count > 0)
-                //{
-                //    for (int i = 0; i < Images.Count; i++)
-                //    {
-                //        if (i + 1 == rDefault[0])
-                //        {
-                //            model.Image = Images[i];
-                //            model.ProductImage.Add(new ProductImage
-                //            {
-                //                ProductId = model.Id,
-                //                Image = Images[i],
-                //                IsDefault = true
-                //            });
-                //        }
-                //        else
-                //        {
-                //            model.ProductImage.Add(new ProductImage
-                //            {
-                //                ProductId = model.Id,
-                //                Image = Images[i],
-                //                IsDefault = false
-                //            });
-                //        }
-                //    }
-                //}
+                if (Images != null && Images.Count > 0)
+                {
+                    for (int i = 0; i < Images.Count; i++)
+                    {
+                        if (i + 1 == rDefault[0])
+                        {
+                            model.Image = Images[i];
+                            model.ProductImage.Add(new ProductImage
+                            {
+                                ProductId = model.Id,
+                                Image = Images[i],
+                                IsDefault = true
+                            });
+                        }
+                        else
+                        {
+                            model.ProductImage.Add(new ProductImage
+                            {
+                                ProductId = model.Id,
+                                Image = Images[i],
+                                IsDefault = false
+                            });
+                        }
+                    }
+                }
                 model.CreatedDate = DateTime.Now;
                 model.ModifiedDate = DateTime.Now;
                 if (string.IsNullOrEmpty(model.SeoTitle))
@@ -82,6 +82,49 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            ViewBag.ProductCategory = new SelectList(db.ProductCategories.ToList(), "Id", "Title");
+            var item = db.Products.Find(id);
+            return View(item);
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Product model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.ModifiedDate = DateTime.Now;
+                model.Alias = ChaoMinBeauty.Models.Common.Filter.FilterChar(model.Title);
+                db.Products.Attach(model);
+                db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var item = db.Products.Find(id);
+            if (item != null)
+            {
+                var checkImg = item.ProductImage.Where(x => x.ProductId == item.Id);
+                if (checkImg != null)
+                {
+                    foreach (var img in checkImg)
+                    {
+                        db.ProductImages.Remove(img);
+                        db.SaveChanges();
+                    }
+                }
+                db.Products.Remove(item);
+                db.SaveChanges();
+                return Json(new { success = true });
+            }
+
+            return Json(new { success = false });
+        }
     }
 }

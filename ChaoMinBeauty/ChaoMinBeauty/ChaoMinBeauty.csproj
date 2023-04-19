@@ -184,6 +184,7 @@
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -202,6 +203,10 @@
     <Compile Include="Migrations\202304101226366_UpdateDatabase.cs" />
     <Compile Include="Migrations\202304101226366_UpdateDatabase.designer.cs">
       <DependentUpon>202304101226366_UpdateDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304191427396_Update1904.cs" />
+    <Compile Include="Migrations\202304191427396_Update1904.designer.cs">
+      <DependentUpon>202304191427396_Update1904.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3017,6 +3022,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\autoNumeric-1.9.45.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -3129,6 +3135,8 @@
     <Content Include="Areas\Admin\Views\Products\Add.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductImage\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3202,6 +3210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304101226366_UpdateDatabase.resx">
       <DependentUpon>202304101226366_UpdateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304191427396_Update1904.resx">
+      <DependentUpon>202304191427396_Update1904.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
