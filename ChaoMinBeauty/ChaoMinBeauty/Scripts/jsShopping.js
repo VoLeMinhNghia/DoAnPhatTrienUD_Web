@@ -8,7 +8,7 @@
         if (tQuantity != '') {
             quatity = parseInt(tQuantity);
         }
-        
+
         //alert(id + " " + quatity);
         $.ajax({
             url: '/shoppingcart/addtocart',
@@ -57,7 +57,7 @@
                 }
             });
         }
-       
+
     });
 });
 
@@ -83,7 +83,7 @@ function DeleteAll() {
         }
     });
 }
-function Update(id,quantity) {
+function Update(id, quantity) {
     $.ajax({
         url: '/shoppingcart/Update',
         type: 'POST',
