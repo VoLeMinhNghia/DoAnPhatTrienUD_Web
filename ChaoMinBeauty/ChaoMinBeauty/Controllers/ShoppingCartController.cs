@@ -103,7 +103,7 @@ namespace ChaoMinBeauty.Controllers
                     db.Orders.Add(order);
                     db.SaveChanges();
                     //send mail cho khachs hang
-                    /*var strSanPham = "";
+                    var strSanPham = "";
                     var thanhtien = decimal.Zero;
                     var TongTien = decimal.Zero;
                     foreach (var sp in cart.Items)
@@ -137,7 +137,7 @@ namespace ChaoMinBeauty.Controllers
                     contentAdmin = contentAdmin.Replace("{{DiaChiNhanHang}}", order.Address);
                     contentAdmin = contentAdmin.Replace("{{ThanhTien}}", ChaoMinBeauty.Common.Common.FormatNumber(thanhtien, 0));
                     contentAdmin = contentAdmin.Replace("{{TongTien}}", ChaoMinBeauty.Common.Common.FormatNumber(TongTien, 0));
-                    ChaoMinBeauty.Common.Common.SendMail("ShopOnline", "Đơn hàng mới #" + order.Code, contentAdmin.ToString(), ConfigurationManager.AppSettings["EmailAdmin"]);*/
+                    ChaoMinBeauty.Common.Common.SendMail("ShopOnline", "Đơn hàng mới #" + order.Code, contentAdmin.ToString(), ConfigurationManager.AppSettings["EmailAdmin"]);
                     cart.ClearCart();
                     return RedirectToAction("CheckOutSuccess");
                 }
