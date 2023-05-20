@@ -11,7 +11,7 @@ using ChaoMinBeauty.Models.ViewModels;
 
 namespace ChaoMinBeauty.Areas.Admin.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class OrderController : Controller
     {
 

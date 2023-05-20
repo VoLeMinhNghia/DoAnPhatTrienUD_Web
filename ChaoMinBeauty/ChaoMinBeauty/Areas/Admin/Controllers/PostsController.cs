@@ -9,7 +9,7 @@ using System.Web.Security;
 
 namespace ChaoMinBeauty.Areas.Admin.Controllers
 {
-    //Authorize(Roles = "Admin,Employee")]
+    Authorize(Roles = "Admin,Employee")]
     public class PostsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ChaoMinBeauty.Areas.Admin.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin, Nhân Viên")]
     public class HomeController : Controller
     {
         // GET: Admin/Home

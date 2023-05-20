@@ -1,6 +1,7 @@
 ﻿using ChaoMinBeauty.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,12 @@ using System.Web.Mvc;
 
 namespace ChaoMinBeauty.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private ApplicationDbContext db = new ApplicationDbContext();
-
         public AccountController()
         {
         }
@@ -50,13 +51,13 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
                 _userManager = value;
             }
         }
+
         // GET: Admin/Account
         public ActionResult Index()
         {
             var ítems = db.Users.ToList();
             return View(ítems);
         }
-
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -95,16 +96,8 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
                     return View(model);
             }
         }
-        private ActionResult RedirectToLocal(string returnUrl)
-        {
-            if (Url.IsLocalUrl(returnUrl))
-            {
-                return Redirect(returnUrl);
-            }
-            return RedirectToAction("Index", "Home");
-        }
 
-        /*//
+        //
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -112,8 +105,7 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
-        }*/
-
+        }
         //
         // GET: /Account/Register
         [AllowAnonymous]
@@ -158,6 +150,23 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
             ViewBag.Role = new SelectList(db.Roles.ToList(), "Name", "Name");
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
+        }
+
+        private ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         private void AddErrors(IdentityResult result)

@@ -10,6 +10,7 @@ using System.Web.UI;
 
 namespace ChaoMinBeauty.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin, Nhân Viên")]
     public class NewsController : Controller
     {
         //[Authorize(Roles = "Admin,Employee")]
