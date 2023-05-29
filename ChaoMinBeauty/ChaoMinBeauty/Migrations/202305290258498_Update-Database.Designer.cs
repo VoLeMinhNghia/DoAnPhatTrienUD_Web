@@ -7,13 +7,13 @@ namespace ChaoMinBeauty.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Update1904 : IMigrationMetadata
+    public sealed partial class UpdateDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Update1904));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "202304191427396_Update1904"; }
+            get { return "202305290258498_Update-Database"; }
         }
         
         string IMigrationMetadata.Source

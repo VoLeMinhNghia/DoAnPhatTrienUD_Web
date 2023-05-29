@@ -1,4 +1,5 @@
 ﻿using ChaoMinBeauty.Models;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,18 @@ namespace ChaoMinBeauty.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Products
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
             var items = db.Products.ToList();
-
-            return View(items);
+            if (page == null)
+            {
+                page = 1;
+            }
+            var pageNumber = page ?? 1;
+            var pageSize = 10;
+            ViewBag.PageSize = pageSize;
+            ViewBag.Page = pageNumber;
+            return View(items.ToPagedList(pageNumber, pageSize));
         }
 
         public ActionResult Detail(string alias, int id)

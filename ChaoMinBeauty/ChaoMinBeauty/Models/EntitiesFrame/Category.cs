@@ -11,10 +11,6 @@ namespace ChaoMinBeauty.Models.EntitiesFrame
     [Table("tb_Category")]
     public class Category : CommonAbstract
     {
-        public Category()
-        {
-            this.News = new HashSet<News>();
-        }
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -35,8 +31,5 @@ namespace ChaoMinBeauty.Models.EntitiesFrame
         public string SeoKeywords { get; set; }
         public bool IsActive { get; set; }
         public int Position { get; set; }
-        public ICollection<News> News { get; set; }
-        public ICollection<Posts> Posts { get; set; }
-
     }
 }

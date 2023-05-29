@@ -106,14 +106,11 @@ C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\
 C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\obj\Debug\ChaoMinBeauty.csproj.CopyComplete
 C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\obj\Debug\ChaoMinBeauty.dll
 C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\obj\Debug\ChaoMinBeauty.pdb
-C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\obj\Debug\ChaoMinBeauty.Migrations.CreatedDatabase.resources
-C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\obj\Debug\ChaoMinBeauty.csproj.GenerateResource.cache
-C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\obj\Debug\ChaoMinBeauty.Migrations.UpdateCategory.resources
-C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\obj\Debug\ChaoMinBeauty.Migrations.UpdateDatabase.resources
 C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\bin\CKFinder.dll
 C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\bin\CKFinder.pdb
 C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\bin\PagedList.dll
 C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\bin\PagedList.Mvc.dll
 C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\bin\PagedList.xml
 C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\bin\PagedList.Mvc.xml
-C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\obj\Debug\ChaoMinBeauty.Migrations.Update1904.resources
+C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\obj\Debug\ChaoMinBeauty.Migrations.UpdateDatabase.resources
+C:\Users\NghiaLe\Desktop\HK2_nam3\DoAnPhatTrienUD\DoAnPhatTrienUD\ChaoMinBeauty\ChaoMinBeauty\obj\Debug\ChaoMinBeauty.csproj.GenerateResource.cache
