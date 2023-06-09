@@ -40,13 +40,13 @@ namespace ChaoMinBeauty
                 defaults: new { controller = "Products", action = "ProductCategory", id = UrlParameter.Optional },
                 namespaces: new[] { "ChaoMinBeauty.Controllers" }
             );
-
+/*
             routes.MapRoute(
                 name: "BaiViet",
                 url: "post/{alias}",
                 defaults: new { controller = "Article", action = "Index", alias = UrlParameter.Optional },
                 namespaces: new[] { "ChaoMinBeauty.Controllers" }
-            );
+            );*/
 
             routes.MapRoute(
                 name: "detailProduct",
@@ -62,7 +62,7 @@ namespace ChaoMinBeauty
                 namespaces: new[] { "ChaoMinBeauty.Controllers" }
             );
 
-            routes.MapRoute(
+            /*routes.MapRoute(
                 name: "DetailNew",
                 url: "{alias}-n{id}",
                 defaults: new { controller = "News", action = "Detail", id = UrlParameter.Optional },
@@ -74,7 +74,7 @@ namespace ChaoMinBeauty
                 url: "tin-tuc",
                 defaults: new { controller = "News", action = "Index", alias = UrlParameter.Optional },
                 namespaces: new[] { "ChaoMinBeauty.Controllers" }
-            );
+            );*/
 
             routes.MapRoute(
                 name: "Default",

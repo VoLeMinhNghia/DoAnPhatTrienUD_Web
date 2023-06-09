@@ -6,21 +6,10 @@
             <img src="~/Content/clients/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="#" class="d-block">ChaoMin</a>
         </div>
     </div>
 
-    <!-- SidebarSearch Form -->
-    @*<div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
-                </div>
-            </div>
-        </div>*@
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
@@ -29,28 +18,43 @@
     with font-awesome or any other icon font library -->
             <li class="nav-item">
                 <a href="/admin/Category" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fa fa-bars"></i>
                     <p>
                         Danh mục
-                       
+
                     </p>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <i class="nav-icon fa fa-unlock-alt" style="float: right; color: green;"></i>
+                    }
+                    else if (User.IsInRole("Nhân Viên"))
+                    {
+                        <i class="nav-icon fa fa-lock" style="float: right; color: #ff6600;"></i>
+                    }
                 </a>
                 </li>
                <li class="nav-item">
-                <a href="/admin/role" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>
-                        Role
-                    </p>
-                </a>
+                   <a href="/admin/role" class="nav-link">
+                       <i class="nav-icon fa fa-users"></i>
+                       <p>
+                           Phân quyền
+                       </p>
+                       @if (User.IsInRole("Admin"))
+                       {
+                           <i class="nav-icon fa fa-unlock-alt" style="float: right; color: green;"></i>
+                       }
+                       else if (User.IsInRole("Nhân Viên"))
+                       {
+                           <i class="nav-icon fa fa-lock" style="float: right; color: #ff6600;"></i>
+                       }
+                   </a>
             </li>
             
             <li class="nav-item">
                 <a href="/admin/order" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icon fa fa-list"></i>
                     <p>
                         Đơn hàng
-                        @*<span class="right badge badge-danger">New</span>*@
                     </p>
                 </a>
             </li>
@@ -67,6 +71,14 @@
                         <a href="/admin/productcategory" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Danh mục sản phẩm</p>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <i class="nav-icon fa fa-unlock-alt" style="float: right; color: green;"></i>
+                            }
+                            else if (User.IsInRole("Nhân Viên"))
+                            {
+                                <i class="nav-icon fa fa-lock" style="float: right; color: #ff6600;"></i>
+                            }
                         </a>
                     </li>
                     <li class="nav-item">
@@ -80,23 +92,28 @@
             </li>
             <li class="nav-item">
                 <a href="/admin/account" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icon fa fa-user-circle"></i>
                     <p>
                         Tài khoản
-                        @*<span class="right badge badge-danger">New</span>*@
                     </p>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <i class="nav-icon fa fa-unlock-alt" style="float: right; color: green;"></i>
+                    }
+                    else if (User.IsInRole("Nhân Viên"))
+                    {
+                        <i class="nav-icon fa fa-lock" style="float: right; color: #ff6600;"></i>
+                    }
                 </a>
             </li>
             <li class="nav-item">
                 <a href="javascript:document.getElementById('logOffForm').submit()" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icon fa fa-power-off"></i>
                     <p>
                         Đăng xuất
-                        @*<span class="right badge badge-danger">New</span>*@
                     </p>
                 </a>
             </li>
-            <li cl
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

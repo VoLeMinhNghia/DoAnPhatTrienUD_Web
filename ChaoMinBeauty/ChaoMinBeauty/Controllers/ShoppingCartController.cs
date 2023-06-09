@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace ChaoMinBeauty.Controllers
 {
+    //[Authorize(Roles = "Admin, Nhân Viên, Khách Hàng")]
     public class ShoppingCartController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

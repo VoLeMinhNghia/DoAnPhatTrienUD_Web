@@ -119,8 +119,16 @@
                                                         <div style="display:none;" class="in_product_price"> @item.Price</div>
                                                     }
                                                 </div>
-                                            </div>
-                                            <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
+                                            </div> 
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+                                                <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
+                                            }
+                                            else
+                                            {
+                                                <div class="red_button add_to_cart_button"><a href="/account/login">add to cart</a></div>
+                                            }
+                                            @*<div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>*@
                                         </div>
                                     }
                                 }
