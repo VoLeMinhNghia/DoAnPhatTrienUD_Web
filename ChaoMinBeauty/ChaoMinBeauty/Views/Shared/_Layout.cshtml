@@ -107,8 +107,8 @@
                             <nav class="navbar">
                                 @Html.Action("MenuTop", "Menu")
                                 <ul class="navbar_user">
-                                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                    @*<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>*@
                                     <li class="checkout">
                                         @if (User.Identity.IsAuthenticated)
                                         {
@@ -143,30 +143,17 @@
 
         @RenderBody()
 
-        <!-- Newsletter -->
-        @*@Html.Action("Partial_Subcrice", "Home")*@
-        <!-- Footer -->
-
         <footer class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
-                            <ul class="footer_nav">
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">FAQs</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
-                            </ul>
-                        </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
                             <ul>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.facebook.com/voleminhnghia"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=sang.nnh.62cntt@ntu.edu.vn"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.instagram.com/minh_minle/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     </div>

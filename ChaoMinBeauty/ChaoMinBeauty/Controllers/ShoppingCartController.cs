@@ -165,7 +165,7 @@ namespace ChaoMinBeauty.Controllers
                     ProductName = checkProduct.Title,
                     CategoryName = checkProduct.ProductCategory.Title,
                     Alias = checkProduct.Alias,
-                    Quantity = quantity
+                    Quantity = quantity,
                 };
                 if (checkProduct.ProductImage.FirstOrDefault(x => x.IsDefault) != null)
                 {
@@ -179,7 +179,7 @@ namespace ChaoMinBeauty.Controllers
                 item.TotalPrice = item.Quantity * item.Price;
                 cart.AddToCart(item, quantity);
                 Session["Cart"] = cart;
-                code = new { Success = true, msg = "Thêm sản phẩm vào giở hàng thành công!", code = 1, Count = cart.Items.Count };
+                code = new { Success = true, msg = "Thêm sản phẩm vào giỏ hàng thành công!", code = 1, Count = cart.Items.Count };
             }
             return Json(code);
         }

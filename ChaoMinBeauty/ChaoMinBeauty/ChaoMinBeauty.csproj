@@ -245,6 +245,7 @@
     <Content Include="Content\assets\dist\img\avatar5.png" />
     <Content Include="Content\assets\dist\img\boxed-bg.jpg" />
     <Content Include="Content\assets\dist\img\boxed-bg.png" />
+    <Content Include="Content\assets\dist\img\Chaomin.png" />
     <Content Include="Content\assets\dist\img\credit\american-express.png" />
     <Content Include="Content\assets\dist\img\credit\cirrus.png" />
     <Content Include="Content\assets\dist\img\credit\mastercard.png" />
@@ -1246,7 +1247,9 @@
     <Content Include="Content\clients\dist\img\avatar5.png" />
     <Content Include="Content\clients\dist\img\boxed-bg.jpg" />
     <Content Include="Content\clients\dist\img\boxed-bg.png" />
-    <Content Include="Content\clients\dist\img\ChaominLogo.png" />
+    <Content Include="Content\clients\dist\img\chao.jpg" />
+    <Content Include="Content\clients\dist\img\Chaomin.png" />
+    <Content Include="Content\clients\dist\img\ChaoMinuser.png" />
     <Content Include="Content\clients\dist\img\credit\american-express.png" />
     <Content Include="Content\clients\dist\img\credit\cirrus.png" />
     <Content Include="Content\clients\dist\img\credit\mastercard.png" />
@@ -1255,6 +1258,7 @@
     <Content Include="Content\clients\dist\img\credit\visa.png" />
     <Content Include="Content\clients\dist\img\default-150x150.png" />
     <Content Include="Content\clients\dist\img\icons.png" />
+    <Content Include="Content\clients\dist\img\min.jpg" />
     <Content Include="Content\clients\dist\img\photo1.png" />
     <Content Include="Content\clients\dist\img\photo2.png" />
     <Content Include="Content\clients\dist\img\photo3.jpg" />
@@ -1264,6 +1268,7 @@
     <Content Include="Content\clients\dist\img\prod-3.jpg" />
     <Content Include="Content\clients\dist\img\prod-4.jpg" />
     <Content Include="Content\clients\dist\img\prod-5.jpg" />
+    <Content Include="Content\clients\dist\img\team.png" />
     <Content Include="Content\clients\dist\img\user1-128x128.jpg" />
     <Content Include="Content\clients\dist\img\user2-160x160.jpg" />
     <Content Include="Content\clients\dist\img\user3-128x128.jpg" />

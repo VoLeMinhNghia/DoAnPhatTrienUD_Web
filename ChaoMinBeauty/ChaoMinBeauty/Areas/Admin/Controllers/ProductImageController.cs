@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace ChaoMinBeauty.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductImageController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
