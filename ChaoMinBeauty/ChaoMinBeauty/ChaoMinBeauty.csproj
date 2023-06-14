@@ -3301,6 +3301,9 @@
     <Content Include="Content\assets\dist\js\.eslintrc.json" />
     <Content Include="Content\assets\dist\js\adminlte.js.map" />
     <Content Include="Content\assets\dist\js\adminlte.min.js.map" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Edit.cshtml" />
+    <None Include="Properties\PublishProfiles\minhnghia176202-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\minhnghia176202-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -38,5 +38,46 @@ namespace ChaoMinBeauty.Areas.Admin.Controllers
             }
             return View();
         }
+
+        public ActionResult Edit(int id)
+        {
+            var item = db.ProductCategories.Find(id);
+            return View(item);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(ProductCategory model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.ModifiedDate = DateTime.Now;
+                model.Alias = ChaoMinBeauty.Models.Common.Filter.FilterChar(model.Title);
+                db.ProductCategories.Attach(model);
+                db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                var category = db.ProductCategories.Find(id);
+                if (category == null)
+                {
+                    return Json(new { success = false });
+                }
+
+                db.ProductCategories.Remove(category);
+                db.SaveChanges();
+
+                return Json(new { success = true });
+            }
+        }
+
     }
 }

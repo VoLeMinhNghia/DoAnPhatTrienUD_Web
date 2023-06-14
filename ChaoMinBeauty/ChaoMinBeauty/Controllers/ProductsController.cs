@@ -15,15 +15,7 @@ namespace ChaoMinBeauty.Controllers
         public ActionResult Index(int? page)
         {
             var items = db.Products.ToList();
-            if (page == null)
-            {
-                page = 1;
-            }
-            var pageNumber = page ?? 1;
-            var pageSize = 10;
-            ViewBag.PageSize = pageSize;
-            ViewBag.Page = pageNumber;
-            return View(items.ToPagedList(pageNumber, pageSize));
+            return View(items);
         }
 
         public ActionResult Detail(string alias, int id)
